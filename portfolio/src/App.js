@@ -9,18 +9,16 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
+        <h1 className="typing-animation">Welcome! I'm Sahaj Singh.</h1>
         <div className="button-container">
           <button onClick={() => handleClick(1)} className="centered-button">
-            Button 1
+            Contact Me
           </button>
           <button onClick={() => handleClick(2)} className="centered-button">
-            Button 2
+            My Resume
           </button>
           <button onClick={() => handleClick(3)} className="centered-button">
-            Button 3
-          </button>
-          <button onClick={() => handleClick(4)} className="centered-button">
-            Button 4
+            My Work
           </button>
         </div>
       </div>
