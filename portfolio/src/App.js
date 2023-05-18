@@ -3,11 +3,9 @@ import { Document, Page } from 'react-pdf';
 import './App.css';
 
 function App() {
-  const [numPages, setNumPages] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
+  function onDocumentLoadSuccess() {
     setLoading(false);
   }
 
