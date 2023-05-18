@@ -60,10 +60,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 5s forwards;
 }
 
 .centered-button {
-  background-color: #61dafb;
+  background-color: #b362ffff;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -73,4 +75,10 @@
   cursor: pointer;
   border-radius: 4px;
   margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.centered-button:hover {
+  transform: scale(1.1);
+  background-color: #2d2b55;
 }
