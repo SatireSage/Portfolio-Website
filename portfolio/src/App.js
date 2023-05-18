@@ -1,7 +1,15 @@
 import React from 'react';
+import { Document, Page } from 'react-pdf';
 import './App.css';
 
 function App() {
+  const [numPages, setNumPages] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+    setLoading(false);
+  }
 
   return (
     <div className="App">
@@ -11,13 +19,25 @@ function App() {
           <a href="mailto:sahaj_singh@sfu.ca" className="centered-button">
             Contact Me
           </a>
-          <a href="%PUBLIC_URL%/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
+          <button onClick={() => window.open(process.env.PUBLIC_URL + "/resume.pdf")} target="_blank" className="centered-button">
             My Resume
-          </a>
-          <a href={process.env.PUBLIC_URL + "/resume.pdf"} target="_blank" rel="noopener noreferrer" className="centered-button">
-            My Resume
+          </button>
+          <a href="https://github.com/SatireSage" rel="noopener noreferrer" className="centered-button">
+            My Work
           </a>
         </div>
+        {!loading && (
+          <React.Fragment>
+            <Document
+              file={process.env.PUBLIC_URL + "/resume.pdf"}
+              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadError={() => setLoading(false)}
+              loading=""
+            >
+              <Page pageNumber={1} />
+            </Document>
+          </React.Fragment>
+        )}
       </div>
     </div>
   );
