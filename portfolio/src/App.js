@@ -2,24 +2,21 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  const handleClick = (buttonNumber) => {
-    console.log(`Button ${buttonNumber} clicked`);
-  };
 
   return (
     <div className="App">
       <div className="App-header">
         <h1 className="typing-animation">Welcome! I'm Sahaj Singh.</h1>
         <div className="button-container">
-          <button onClick={() => handleClick(1)} className="centered-button">
+          <a href="mailto:sahaj_singh@sfu.ca" className="centered-button">
             Contact Me
-          </button>
-          <button onClick={() => handleClick(2)} className="centered-button">
+          </a>
+          <a href="%PUBLIC_URL%/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
             My Resume
-          </button>
-          <button onClick={() => handleClick(3)} className="centered-button">
-            My Work
-          </button>
+          </a>
+          <a href={process.env.PUBLIC_URL + "/resume.pdf"} target="_blank" rel="noopener noreferrer" className="centered-button">
+            My Resume
+          </a>
         </div>
       </div>
     </div>
