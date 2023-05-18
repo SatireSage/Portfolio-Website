@@ -58,7 +58,7 @@ function App() {
             }
           },
           "size": {
-            "value": 3,
+            "value": 4,
             "random": true,
             "anim": {
               "enable": false,
@@ -76,7 +76,7 @@ function App() {
           },
           "move": {
             "enable": true,
-            "speed": 6,
+            "speed": 3,
             "direction": "none",
             "random": false,
             "straight": false,
@@ -98,7 +98,7 @@ function App() {
             },
             "onclick": {
               "enable": true,
-              "mode": "repulse"
+              "mode": "push"
             },
             "resize": true
           },
@@ -111,7 +111,7 @@ function App() {
             },
             "bubble": {
               "distance": 400,
-              "size": 7,
+              "size": 10,
               "duration": 3,
               "opacity": 1,
               "speed": 3
@@ -133,14 +133,14 @@ function App() {
       <div className="App-header">
         <h1 className="typing-animation">Welcome! I'm Sahaj Singh.</h1>
         <div className="button-container">
-          <a href="mailto:sahaj_singh@sfu.ca" className="centered-button">
-            Contact Me
+          <a href="https://www.linkedin.com/in/sahaj--singh/" className="centered-button">
+            Connect With Me
           </a>
-          <button onClick={() => window.open(process.env.PUBLIC_URL + "/resume.pdf")} target="_blank" className="centered-button">
-            My Resume
+          <button onClick={() => window.location.href = process.env.PUBLIC_URL + "/resume.pdf"} className="centered-button">
+            Hire Me!
           </button>
           <a href="https://github.com/SatireSage" rel="noopener noreferrer" className="centered-button">
-            My Work
+            Check Out My Work
           </a>
         </div>
         {!loading && (
