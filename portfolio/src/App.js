@@ -10,10 +10,9 @@ function App() {
   const init = useCallback(async (engine) => {
     await loadFull(engine)
   })
-  const [isAnimationFinished, setIsAnimationFinished] = useState(false);
   
   const handleHireMeClick = () => {
-    const win = window.open("", "_blank");
+    const win = window.open("https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true", "Resume");
     win.document.write(`
       <style>
         body {
@@ -48,13 +47,6 @@ function App() {
       this.style.backgroundColor = '#b362ffff';
     });
   }
-  
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimationFinished(true);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="App">
@@ -171,13 +163,13 @@ function App() {
       <div className="App-header">
         <h1 className="typing-animation">Welcome! I'm Sahaj Singh.</h1>
         <div className="button-container">
-          <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button" onClick={e => !isAnimationFinished && e.preventDefault()}>
+          <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
             Connect With Me
           </a>
-          <button onClick={isAnimationFinished ? handleHireMeClick : undefined} className="centered-button">
+          <button onClick={handleHireMeClick} className="centered-button">
             Hire Me!
           </button>
-          <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button" onClick={e => !isAnimationFinished && e.preventDefault()}>
+          <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
             Check Out My Work
           </a>
         </div>
