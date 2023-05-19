@@ -1,5 +1,4 @@
-// eslint-disable-next-line
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback } from 'react'
 import React from 'react';
 import './App.css';
 import Particles from 'react-tsparticles'
@@ -11,43 +10,6 @@ function App() {
     await loadFull(engine)
   })
   
-  const handleHireMeClick = () => {
-    const win = window.open("https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true", "Resume");
-    win.document.write(`
-      <style>
-        body {
-          text-align: center;
-          padding: 0;
-          margin: 0;
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background-color: #282c34;
-        }
-      </style>
-      <button style="background-color: #b362ffff; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer; border-radius: 4px; margin: 10px auto; transition: transform 0.3s; width: auto; font-weight: bold;" onClick="window.location.href='https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf'">
-        Download Resume
-      </button>
-      <iframe
-        src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true"
-        style="width:100%; height:calc(100vh - 60px); border:none;"
-        title="Resume"
-      ></iframe>
-    `);
-  
-    win.document.querySelector('button').addEventListener('mouseover', function() {
-      this.style.transform = 'scale(1.1)';
-      this.style.backgroundColor = '#2d2b55';
-    });
-  
-    win.document.querySelector('button').addEventListener('mouseout', function() {
-      this.style.transform = '';
-      this.style.backgroundColor = '#b362ffff';
-    });
-  }
-
   return (
     <div className="App">
       <Particles options={{
@@ -166,9 +128,9 @@ function App() {
           <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
             Connect With Me
           </a>
-          <button onClick={handleHireMeClick} className="centered-button">
+          <a href="https://nbviewer.org/github/SatireSage/Resume/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
             Hire Me!
-          </button>
+          </a>
           <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
             Check Out My Work
           </a>
