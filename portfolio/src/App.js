@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import React from 'react';
 import './App.css';
 import Particles from 'react-tsparticles'
@@ -10,16 +10,52 @@ function App() {
   const init = useCallback(async (engine) => {
     await loadFull(engine)
   })
+  const [isAnimationFinished, setIsAnimationFinished] = useState(false);
+  
   const handleHireMeClick = () => {
-    const win = window.open("https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true", "resume");
+    const win = window.open("", "_blank");
     win.document.write(`
+      <style>
+        body {
+          text-align: center;
+          padding: 0;
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #282c34;
+        }
+      </style>
+      <button style="background-color: #b362ffff; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer; border-radius: 4px; margin: 10px auto; transition: transform 0.3s; width: auto; font-weight: bold;" onClick="window.location.href='https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf'">
+        Download Resume
+      </button>
       <iframe
         src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true"
-        style="width:100%; height:100%; border:none;"
+        style="width:100%; height:calc(100vh - 60px); border:none;"
         title="Resume"
       ></iframe>
     `);
+  
+    win.document.querySelector('button').addEventListener('mouseover', function() {
+      this.style.transform = 'scale(1.1)';
+      this.style.backgroundColor = '#2d2b55';
+    });
+  
+    win.document.querySelector('button').addEventListener('mouseout', function() {
+      this.style.transform = '';
+      this.style.backgroundColor = '#b362ffff';
+    });
   }
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimationFinished(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="App">
       <Particles options={{
@@ -135,13 +171,13 @@ function App() {
       <div className="App-header">
         <h1 className="typing-animation">Welcome! I'm Sahaj Singh.</h1>
         <div className="button-container">
-          <a href="https://www.linkedin.com/in/sahaj--singh/" className="centered-button">
+          <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button" onClick={e => !isAnimationFinished && e.preventDefault()}>
             Connect With Me
           </a>
-          <button onClick={handleHireMeClick} className="centered-button">
+          <button onClick={isAnimationFinished ? handleHireMeClick : undefined} className="centered-button">
             Hire Me!
           </button>
-          <a href="https://github.com/SatireSage" rel="noopener noreferrer" className="centered-button">
+          <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button" onClick={e => !isAnimationFinished && e.preventDefault()}>
             Check Out My Work
           </a>
         </div>
