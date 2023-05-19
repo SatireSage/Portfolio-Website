@@ -29,7 +29,7 @@ html, body {
   font-size: calc(10px + 2vmin);
   color: white;
   opacity: 0;
-  animation: fadeIn 1s ease-in 3s forwards;
+  animation: fadeIn 1s ease-in 2s forwards;
 }
 
 .loader, .particles {
@@ -69,9 +69,9 @@ html, body {
   border-right: .15em solid white;
   visibility: hidden;
   animation: 
-    typing 3s steps(30, end) 4s forwards, 
+    typing 3s steps(30, end) 3s forwards, 
     blink-caret .75s step-end infinite 4s,
-    visible 0s linear 4s forwards;
+    visible 0s linear 3s forwards;
 }
 
 @keyframes visible {
@@ -102,7 +102,7 @@ html, body {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  animation: fadeIn 1s ease-in 7s forwards;
+  animation: fadeIn 1s ease-in 6s forwards;
   flex-wrap: wrap;
 }
 
