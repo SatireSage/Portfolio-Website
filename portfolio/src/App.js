@@ -9,17 +9,13 @@ function App() {
   const init = useCallback(async (engine) => {
     await loadFull(engine)
   })
-
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-
     return () => clearTimeout(timer);
   }, []);
-
 
   return (
     <div className="App">
