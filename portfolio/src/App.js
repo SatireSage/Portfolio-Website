@@ -1,7 +1,6 @@
 // eslint-disable-next-line
 import { useCallback, useState } from 'react'
 import React from 'react';
-import { Document, Page } from 'react-pdf';
 import './App.css';
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
@@ -11,13 +10,16 @@ function App() {
   const init = useCallback(async (engine) => {
     await loadFull(engine)
   })
-  
-  const [loading, setLoading] = React.useState(true);
-
-  function onDocumentLoadSuccess() {
-    setLoading(false);
+  const handleHireMeClick = () => {
+    const win = window.open("https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true", "resume");
+    win.document.write(`
+      <iframe
+        src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true"
+        style="width:100%; height:100%; border:none;"
+        title="Resume"
+      ></iframe>
+    `);
   }
-
   return (
     <div className="App">
       <Particles options={{
@@ -136,25 +138,13 @@ function App() {
           <a href="https://www.linkedin.com/in/sahaj--singh/" className="centered-button">
             Connect With Me
           </a>
-          <button onClick={() => window.location.href = process.env.PUBLIC_URL + "/resume.pdf"} className="centered-button">
+          <button onClick={handleHireMeClick} className="centered-button">
             Hire Me!
           </button>
           <a href="https://github.com/SatireSage" rel="noopener noreferrer" className="centered-button">
             Check Out My Work
           </a>
         </div>
-        {!loading && (
-          <React.Fragment>
-            <Document
-              file={process.env.PUBLIC_URL + "/resume.pdf"}
-              onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={() => setLoading(false)}
-              loading=""
-            >
-              <Page pageNumber={1} />
-            </Document>
-          </React.Fragment>
-        )}
       </div>
     </div>
   );
