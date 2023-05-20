@@ -156,7 +156,7 @@ function App() {
             {profilePic && (
               <img src={profilePic} alt="Profile" className="profile-pic"/>
             )}
-            <h1>Welcome! I'm Sahaj Singh.</h1>
+            <h1>Hi! My Name Is Sahaj Singh.</h1>
             <h2>
               <Typed
                 strings={[
@@ -167,7 +167,7 @@ function App() {
                   'I\'m a music lover 🎵',
                   'I\'m a gamer 🎮',
                   'I\'m a foodie 🍔',
-                  'I\'m a traveler ✈️',
+                  'I\'m a traveler 🛫',
                   'I\'m a photographer 📷',
                   'I\'m a dreamer 💭',
                   'I\'m a thinker 🤔',
@@ -187,10 +187,10 @@ function App() {
             Connect With Me
           </a>
           <a href="https://nbviewer.org/github/SatireSage/Resume/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
-            Check Out My Resume
+            Look At My Resume
           </a>
           <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
-            Look At My Work
+            Check Out My Work
           </a>
         </div>
       </div>
