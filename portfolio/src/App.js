@@ -186,7 +186,7 @@ function App() {
           <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
             Connect With Me
           </a>
-          <a href="https://nbviewer.org/github/SatireSage/Resume/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
+          <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/resume.pdf&embedded=true" target="_blank" rel="noopener noreferrer" className="centered-button">
             Look At My Resume
           </a>
           <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
