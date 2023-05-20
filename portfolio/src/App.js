@@ -12,12 +12,20 @@ function App() {
   })
 
   const [loading, setLoading] = useState(true);
+  const [profilePic, setProfilePic] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/SatireSage')
+    .then(response => response.json())
+    .then(data => setProfilePic(data.avatar_url))
+    .catch(error => console.log(error));
   }, []);
 
   return (
@@ -145,6 +153,9 @@ function App() {
       <div className="App-header">
       {!loading && (
           <>
+            {profilePic && (
+              <img src={profilePic} alt="Profile" className="profile-pic"/>
+            )}
             <h1>Welcome! I'm Sahaj Singh.</h1>
             <h2>
               <Typed

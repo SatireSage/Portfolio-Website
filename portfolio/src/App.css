@@ -33,6 +33,7 @@ html, body {
 }
 
 .App-header h1 {
+  margin-top: 0;
   margin-bottom: 0em;
   opacity: 0;
   animation: fadeIn 1s ease-in 1s forwards;
@@ -43,6 +44,16 @@ html, body {
   color: white;
   margin-top: 0.5em;
   margin-bottom: 1em;
+}
+
+.profile-pic {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 1s forwards;
 }
 
 .cursor-hidden .TypedCursor {
