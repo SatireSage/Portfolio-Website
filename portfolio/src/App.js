@@ -146,10 +146,10 @@ function App() {
               Connect With Me
             </a>
             <a href="https://nbviewer.org/github/SatireSage/Resume/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
-              Hire Me!
+              Check Out My Resume
             </a>
             <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
-              Check Out My Work
+              Look At My Work
             </a>
           </div>
         </div>
