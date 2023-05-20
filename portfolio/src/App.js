@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Particles from 'react-tsparticles'
 import { ThreeDots } from 'react-loader-spinner';
 import { loadFull } from 'tsparticles'
+import Typed from 'react-typed';
 import './App.css';
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
   const init = useCallback(async (engine) => {
     await loadFull(engine)
   })
+
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -140,19 +143,46 @@ function App() {
         }} init={init}/>
       </div>
       <div className="App-header">
-          <h1 className="typing-animation">Welcome! I'm Sahaj Singh.</h1>
-          <div className="button-container">
-            <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
-              Connect With Me
-            </a>
-            <a href="https://nbviewer.org/github/SatireSage/Resume/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
-              Check Out My Resume
-            </a>
-            <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
-              Look At My Work
-            </a>
-          </div>
+      {!loading && (
+          <>
+            <h1>Welcome! I'm Sahaj Singh.</h1>
+            <h2>
+              <Typed
+                strings={[
+                  'I\'m developer 💻',
+                  'I\'m writer 📝',
+                  'I\'m student 📚',
+                  'I\'m a mystery movie fan 🎥',
+                  'I\'m a music lover 🎵',
+                  'I\'m a gamer 🎮',
+                  'I\'m a foodie 🍔',
+                  'I\'m a traveler ✈️',
+                  'I\'m a photographer 📷',
+                  'I\'m a dreamer 💭',
+                  'I\'m a thinker 🤔',
+                  'I\'m a learner 📖',
+                ]}
+                startDelay={2000}
+                typeSpeed={40}
+                backSpeed={50}
+                showCursor={false}
+                loop
+              />
+            </h2>
+          </>
+        )}
+        <div className="button-container">
+          <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
+            Connect With Me
+          </a>
+          <a href="https://nbviewer.org/github/SatireSage/Resume/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer" className="centered-button">
+            Check Out My Resume
+          </a>
+          <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
+            Look At My Work
+          </a>
         </div>
+      </div>
     </div>
   );
 }
