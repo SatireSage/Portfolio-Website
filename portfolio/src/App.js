@@ -180,7 +180,8 @@ function App() {
                 startDelay={2000}
                 typeSpeed={40}
                 backSpeed={50}
-                showCursor={false}
+                showCursor={true}
+                cursorChar='_'
                 loop
               />
             </h2>
