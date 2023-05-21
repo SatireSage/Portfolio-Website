@@ -3,6 +3,7 @@ import Particles from 'react-tsparticles'
 import { ThreeDots } from 'react-loader-spinner';
 import { loadFull } from 'tsparticles'
 import Typed from 'react-typed';
+import Tilt from 'react-parallax-tilt';
 import './App.css';
 
 function App() {
@@ -154,23 +155,26 @@ function App() {
       {!loading && (
           <>
             {profilePic && (
-              <img src={profilePic} alt="Profile" className="profile-pic"/>
+              <Tilt className="Tilt" ttiltEnable={true} trackOnWindow={true} tiltAngleXPercentage={90} tiltAngleYPercentage={90}>
+                <img src={profilePic} alt="Profile" className="profile-pic"/>
+              </Tilt>
             )}
             <h1>Hi! My Name Is Sahaj Singh.</h1>
             <h2>
               <Typed
                 strings={[
-                  'I\'m developer 💻',
-                  'I\'m writer 📝',
-                  'I\'m student 📚',
-                  'I\'m a mystery movie fan 🎥',
+                  'I\'m majoring in Computing Engineering 🧑‍💻',
+                  'I\'m a developer 💻',
+                  'I\'m a writer 📝',
+                  'I\'m a student at SFU 📚',
+                  'I like mystery movies 🎥',
                   'I\'m a music lover 🎵',
+                  'I\'m working on making a Pi-arcade 🕹️',
                   'I\'m a gamer 🎮',
-                  'I\'m a foodie 🍔',
                   'I\'m a traveler 🛫',
                   'I\'m a photographer 📷',
+                  'I love cooking 🍳',
                   'I\'m a dreamer 💭',
-                  'I\'m a thinker 🤔',
                   'I\'m a learner 📖',
                 ]}
                 startDelay={2000}
