@@ -106,11 +106,13 @@ html, body {
   cursor: pointer;
   border-radius: 4px;
   margin: 0 10px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   width: auto;
   font-weight: bold;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   pointer-events: auto;
+    position: relative;
+  overflow: hidden;
 }
 
 .centered-button:hover {
