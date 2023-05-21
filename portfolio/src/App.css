@@ -7,7 +7,6 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 .App {
@@ -17,8 +16,35 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #282c34;
   position: relative;
+}
+
+.App.light {
+  background-color: #FFF;
+  color: #0c1117;
+}
+
+.App.dark {
+  background-color: #0c1117;
+  color: #FFF;
+}
+
+.mode-switcher {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  color: #ffffff;
+  transition: color 0.5s ease-in-out;
+  pointer-events: auto;
+}
+
+.mode-switcher.light {
+  color: #282c34;
 }
 
 .App-header {
@@ -27,7 +53,6 @@ html, body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
   opacity: 0;
   animation: fadeIn 1s ease-in 2s forwards;
   pointer-events: none;
@@ -42,7 +67,6 @@ html, body {
 
 .App-header h2 {
   font-size: 24px;
-  color: white;
   margin-top: 0.5em;
   margin-bottom: 1em;
 }
@@ -51,10 +75,17 @@ html, body {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 3px solid white;
   margin-bottom: 6px;
   opacity: 0;
   animation: fadeIn 1s ease-in 1s forwards;
+}
+
+.App.light .profile-pic {
+  border: 3px solid #0c1117;
+}
+
+.App.dark .profile-pic {
+  border: 3px solid #fbdb5c;
 }
 
 .loader, .particles {
@@ -96,9 +127,7 @@ html, body {
 }
 
 .centered-button {
-  background-color: #b362ffff;
   border: none;
-  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -109,24 +138,43 @@ html, body {
   transition: all 0.5s ease-in-out;
   width: auto;
   font-weight: bold;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   pointer-events: auto;
     position: relative;
   overflow: hidden;
 }
 
+.App.light .centered-button {
+  background-color: #0c1117;
+  color: #FFF;
+}
+
+.App.dark .centered-button {
+  background-color: #fbdb5c;
+  color: #0c1117;
+}
+
 .centered-button:hover {
   transform: scale(1.1) translateY(-5px);
-  background-color: #2d2b55;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+.App.light .centered-button:hover {
+  background-color: #4e4e60;
+}
+
+.App.dark .centered-button:hover {
+  background-color: #FFF;
 }
 
 .centered-button:active {
   transform: scale(1.1) translateY(-2px);
-  box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
 }
 
 @media only screen and (max-width: 600px) {
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
   .centered-button {
     padding: 10px 20px;
     font-size: 14px;
@@ -135,6 +183,11 @@ html, body {
 }
 
 @media only screen and (max-width: 400px) {
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
   .centered-button {
     padding: 8px 16px;
     font-size: 12px;

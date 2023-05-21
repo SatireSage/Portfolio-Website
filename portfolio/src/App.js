@@ -4,6 +4,7 @@ import { ThreeDots } from 'react-loader-spinner';
 import { loadFull } from 'tsparticles'
 import Typed from 'react-typed';
 import Tilt from 'react-parallax-tilt';
+import { FiSun, FiMoon } from 'react-icons/fi';
 import './App.css';
 
 function App() {
@@ -11,6 +12,23 @@ function App() {
   const init = useCallback(async (engine) => {
     await loadFull(engine)
   })
+
+  const [mode, setMode] = useState(
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
+
+  const toggleMode = () => {
+    setMode(mode === 'light' ? 'dark' : 'light');
+  }
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => setMode(mediaQuery.matches ? 'dark' : 'light');
+  
+    mediaQuery.addListener(handleChange);
+
+    return () => mediaQuery.removeListener(handleChange);
+  }, []);
 
   const [loading, setLoading] = useState(true);
   const [profilePic, setProfilePic] = useState(null);
@@ -30,7 +48,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       <div className={loading ? 'loader visible' : 'loader hidden'}>
         <ThreeDots
           color="#b362ffff"
@@ -50,7 +68,7 @@ function App() {
               }
             },
             "color": {
-              "value": "#b362ffff"
+              "value": mode === 'dark' ? "#fbdb5c" : "#4e4e60"
             },
             "shape": {
               "type": "circle",
@@ -90,7 +108,7 @@ function App() {
             "line_linked": {
               "enable": true,
               "distance": 150,
-              "color": "#FFFFFF",
+              "color": mode === 'dark' ? "#fff" : "#0c1117",
               "opacity": 0.4,
               "width": 1
             },
@@ -187,6 +205,9 @@ function App() {
             </h2>
           </>
         )}
+        <button onClick={toggleMode} className={`mode-switcher ${mode}`}>
+          {mode === 'light' ? <FiMoon /> : <FiSun />}
+        </button>
         <div className="button-container">
           <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
             Connect With Me
