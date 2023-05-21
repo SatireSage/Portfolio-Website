@@ -32,6 +32,15 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const [profilePic, setProfilePic] = useState(null);
+  const [firstLoad, setFirstLoad] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setFirstLoad(false);
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -51,7 +60,7 @@ function App() {
     <div className={`App ${mode}`}>
       <div className={loading ? 'loader visible' : 'loader hidden'}>
         <ThreeDots
-          color="#b362ffff"
+          color={mode === 'dark' ? "#fbdb5c" : "#0c1117"}
           height={100}
           width={100}
           timeout={2000}
@@ -61,14 +70,14 @@ function App() {
       <Particles options={{
           "particles": {
             "number": {
-              "value": 123,
+              "value": 150,
               "density": {
                 "enable": true,
                 "value_area": 800
               }
             },
             "color": {
-              "value": mode === 'dark' ? "#fbdb5c" : "#4e4e60"
+              "value": mode === 'dark' ? "#fbdb5c" : "#0c1117"
             },
             "shape": {
               "type": "circle",
@@ -108,7 +117,7 @@ function App() {
             "line_linked": {
               "enable": true,
               "distance": 150,
-              "color": mode === 'dark' ? "#fff" : "#0c1117",
+              "color": mode === 'dark' ? "#fff" : "#4e4e60",
               "opacity": 0.4,
               "width": 1
             },
@@ -159,7 +168,7 @@ function App() {
                 "duration": 0.4
               },
               "push": {
-                "particles_nb": 4
+                "particles_nb": 5
               },
               "remove": {
                 "particles_nb": 2
@@ -177,7 +186,17 @@ function App() {
                 <img src={profilePic} alt="Profile" className="profile-pic"/>
               </Tilt>
             )}
-            <h1>Hi! My Name Is Sahaj Singh.</h1>
+            <h1>
+              <Typed
+                strings={[
+                  'Hi! My Name Is Sahaj Singh.',
+                ]}
+                startDelay={2000}
+                typeSpeed={40}
+                showCursor={false}
+                loop={false}
+              />
+            </h1>
             <h2>
               <Typed
                 strings={[
@@ -195,11 +214,11 @@ function App() {
                   'I\'m a dreamer 💭',
                   'I\'m a learner 📖',
                 ]}
-                startDelay={2000}
+                startDelay={firstLoad ? 6000 : 0}
                 typeSpeed={40}
-                backSpeed={50}
+                backSpeed={40}
+                backDelay={2000}
                 showCursor={true}
-                cursorChar='_'
                 loop
               />
             </h2>
