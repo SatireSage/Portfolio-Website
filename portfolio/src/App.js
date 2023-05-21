@@ -200,19 +200,19 @@ function App() {
             <h2>
               <Typed
                 strings={[
-                  'I\'m majoring in Computing Engineering 🧑‍💻',
+                  'I\'m majoring in Computer Engineering 🧑‍💻',
                   'I\'m a developer 💻',
-                  'I\'m a writer 📝',
-                  'I\'m a student at SFU 📚',
+                  'I like to write short stories 📝',
+                  'I\'m a student at SFU 📕',
                   'I like mystery movies 🎥',
-                  'I\'m a music lover 🎵',
-                  'I\'m working on making a Pi-arcade 🕹️',
+                  'I can\'t sing 🎤 but I\'m a music lover 🎧',
+                  'I\'m working on making a Pi-Arcade 🕹️',
                   'I\'m a gamer 🎮',
-                  'I\'m a traveler 🛫',
-                  'I\'m a photographer 📷',
+                  'I\'ve traveled a lot 🛫',
+                  'I\'m an avid photographer 📷',
                   'I love cooking 🍳',
                   'I\'m a dreamer 💭',
-                  'I\'m a learner 📖',
+                  'I\'ve been coding since middle school 📖',
                 ]}
                 startDelay={firstLoad ? 6000 : 0}
                 typeSpeed={40}
