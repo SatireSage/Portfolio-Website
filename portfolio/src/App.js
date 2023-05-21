@@ -201,12 +201,12 @@ function App() {
               <Typed
                 strings={[
                   'I\'m majoring in Computer Engineering 🧑‍💻',
+                  'I\'m working on making a Pi-Arcade 🕹️',
                   'I\'m a developer 💻',
                   'I like to write short stories 📝',
                   'I\'m a student at SFU 📕',
                   'I like mystery movies 🎥',
                   'I can\'t sing 🎤 but I\'m a music lover 🎧',
-                  'I\'m working on making a Pi-Arcade 🕹️',
                   'I\'m a gamer 🎮',
                   'I\'ve traveled a lot 🛫',
                   'I\'m an avid photographer 📷',
