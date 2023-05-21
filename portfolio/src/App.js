@@ -70,7 +70,7 @@ function App() {
       <Particles options={{
           "particles": {
             "number": {
-              "value": 150,
+              "value": 123,
               "density": {
                 "enable": true,
                 "value_area": 800
@@ -145,7 +145,7 @@ function App() {
               },
               "onclick": {
                 "enable": true,
-                "mode": "push"
+                "mode": "repulse"
               },
               "resize": true
             },
@@ -164,7 +164,7 @@ function App() {
                 "speed": 3
               },
               "repulse": {
-                "distance": 200,
+                "distance": 300,
                 "duration": 0.4
               },
               "push": {
