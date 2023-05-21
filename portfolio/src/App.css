@@ -30,6 +30,7 @@ html, body {
   color: white;
   opacity: 0;
   animation: fadeIn 1s ease-in 2s forwards;
+  pointer-events: none;
 }
 
 .App-header h1 {
@@ -105,14 +106,22 @@ html, body {
   cursor: pointer;
   border-radius: 4px;
   margin: 0 10px;
-  transition: transform 0.3s;
+  transition: all 0.3s ease-in-out;
   width: auto;
   font-weight: bold;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  pointer-events: auto;
 }
 
 .centered-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) translateY(-5px);
   background-color: #2d2b55;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+.centered-button:active {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
 }
 
 @media only screen and (max-width: 600px) {

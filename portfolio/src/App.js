@@ -131,7 +131,7 @@ function App() {
               },
               "bubble": {
                 "distance": 400,
-                "size": 10,
+                "size": 15,
                 "duration": 3,
                 "opacity": 1,
                 "speed": 3
@@ -152,7 +152,7 @@ function App() {
         }} init={init}/>
       </div>
       <div className="App-header">
-      {!loading && (
+        {!loading && (
           <>
             {profilePic && (
               <Tilt className="Tilt" ttiltEnable={true} trackOnWindow={true} tiltAngleXPercentage={90} tiltAngleYPercentage={90}>
