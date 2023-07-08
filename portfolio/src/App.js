@@ -58,6 +58,9 @@ function App() {
 
   return (
     <div className={`App ${mode}`}>
+      <div className={`watermark ${mode === 'dark' ? 'light' : 'dark'}`}>
+  ©     {new Date().getFullYear()} Sahaj Singh. All Rights Reserved.
+      </div>
       <div className={loading ? 'loader visible' : 'loader hidden'}>
         <ThreeDots
           color={mode === 'dark' ? "#fbdb5c" : "#0c1117"}

@@ -225,3 +225,24 @@ html, body {
     margin: 5px 10px;
   }
 }
+
+.watermark {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  opacity: 1;
+  font-size: 12px;
+  color: #000;
+  z-index: 1000;
+}
+
+.watermark.light {
+  color: #fbdb5c;
+  background-color: rgba(12, 17, 23, 0.6);
+}
+
+.watermark.dark {
+  color: #0c1117;
+  background-color: rgba(251, 219, 92, 0.6);
+}
+
