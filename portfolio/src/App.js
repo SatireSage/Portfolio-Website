@@ -45,7 +45,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -66,7 +66,6 @@ function App() {
           color={mode === 'dark' ? "#fbdb5c" : "#0c1117"}
           height={100}
           width={100}
-          timeout={2000}
         />
       </div>
       <div className={loading ? 'particles hidden' : 'particles visible'}>
