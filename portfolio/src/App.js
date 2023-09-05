@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Particles from 'react-tsparticles'
 import { FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 import { ThreeDots } from 'react-loader-spinner';
@@ -56,9 +56,28 @@ function App() {
     .then(data => setProfilePic(data.avatar_url))
     .catch(error => console.log(error));
   }, []);
+  
+  const cursorRef = useRef(null);
+
+  useEffect(() => {
+    const moveCursor = e => {
+      const { clientX: x, clientY: y } = e;
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${x}px`;
+        cursorRef.current.style.top = `${y}px`;
+      }
+    };
+
+    document.addEventListener('mousemove', moveCursor);
+
+    return () => {
+      document.removeEventListener('mousemove', moveCursor);
+    };
+  }, []);
 
   return (
     <div className={`App ${mode}`}>
+      <div className="cursor" ref={cursorRef}></div>
       <div className={`watermark ${mode === 'dark' ? 'light' : 'dark'}`}>
   ©     {new Date().getFullYear()} Sahaj Singh. All Rights Reserved.
       </div>

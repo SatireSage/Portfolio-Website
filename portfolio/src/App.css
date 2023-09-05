@@ -7,6 +7,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  cursor: none;
 }
 
 .App {
@@ -29,6 +30,30 @@ html, body {
   color: #fbdb5c;
 }
 
+.cursor {
+  width: 15px;
+  height: 15px;
+  background-color: currentColor;
+  border: 2px solid;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  position: absolute;
+}
+
+.App.light .cursor {
+  color: #0c1117;
+  border-color: #fbdb5c;
+}
+
+.App.dark .cursor {
+  color: #fbdb5c;
+  border-color: #0c1117;
+}
+
+
 .mode-switcher {
   position: fixed;
   top: 20px;
@@ -36,9 +61,8 @@ html, body {
   background-color: transparent;
   border: none;
   font-size: 2rem;
-  cursor: pointer;
+  cursor: none;
   z-index: 1000;
-
   transition: color 0.5s ease-in-out;
   pointer-events: auto;
 }
@@ -161,7 +185,7 @@ html, body {
   text-align: center;
   text-decoration: none;
   font-size: 18px;
-  cursor: pointer;
+  cursor: none;
   border-radius: 5px;
   margin: 0 10px;
   transition: all 0.5s ease-in-out;
