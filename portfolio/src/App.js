@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Particles from 'react-tsparticles'
+import { FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 import { ThreeDots } from 'react-loader-spinner';
 import { loadFull } from 'tsparticles'
 import Typed from 'react-typed';
@@ -70,115 +71,116 @@ function App() {
       </div>
       <div className={loading ? 'particles hidden' : 'particles visible'}>
       <Particles options={{
-          "particles": {
-            "number": {
-              "value": 123,
-              "density": {
-                "enable": true,
-                "value_area": 800
-              }
-            },
-            "color": {
-              "value": mode === 'dark' ? "#fbdb5c" : "#0c1117"
-            },
-            "shape": {
-              "type": "circle",
-              "stroke": {
-                "width": 0,
-                "color": "#000000"
-              },
-              "polygon": {
-                "nb_sides": 6
-              },
-              "image": {
-                "src": "img/github.svg",
-                "width": 100,
-                "height": 100
-              }
-            },
-            "opacity": {
-              "value": 0.5,
-              "random": false,
-              "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-              }
-            },
-            "size": {
-              "value": 4,
-              "random": true,
-              "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-              }
-            },
-            "line_linked": {
+        "particles": {
+          "number": {
+            "value": 6,
+            "density": {
               "enable": true,
-              "distance": 150,
-              "color": mode === 'dark' ? "#fff" : "#4e4e60",
-              "opacity": 0.4,
-              "width": 1
-            },
-            "move": {
-              "enable": true,
-              "speed": 3,
-              "direction": "none",
-              "random": false,
-              "straight": false,
-              "out_mode": "out",
-              "bounce": false,
-              "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-              }
+              "value_area": 600
             }
           },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-              "onhover": {
-                "enable": true,
-                "mode": "bubble"
-              },
-              "onclick": {
-                "enable": true,
-                "mode": "repulse"
-              },
-              "resize": true
+          "color": {
+            "value": mode === 'dark' ? "#fbdb5c" : "#0c1117"
+          },
+          "shape": {
+            "type": "polygon",
+            "stroke": {
+              "width": 0,
+              "color": "#000"
             },
-            "modes": {
-              "grab": {
-                "distance": 400,
-                "line_linked": {
-                  "opacity": 1
-                }
-              },
-              "bubble": {
-                "distance": 400,
-                "size": 15,
-                "duration": 3,
-                "opacity": 1,
-                "speed": 3
-              },
-              "repulse": {
-                "distance": 300,
-                "duration": 0.4
-              },
-              "push": {
-                "particles_nb": 5
-              },
-              "remove": {
-                "particles_nb": 2
-              }
+            "polygon": {
+              "nb_sides": 6
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
             }
           },
-          "retina_detect": true
-        }} init={init}/>
+          "opacity": {
+            "value": 0.1,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 160,
+            "random": false,
+            "anim": {
+              "enable": true,
+              "speed": 10,
+              "size_min": 40,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": false,
+            "distance": 200,
+            "color": "#ffffff",
+            "opacity": 1,
+            "width": 2
+          },
+          "move": {
+            "enable": true,
+            "speed": 3,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": false,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+        }
+      } init={init}/>
       </div>
       <div className="App-header">
         {!loading && (
@@ -191,7 +193,7 @@ function App() {
             <h1>
               <Typed
                 strings={[
-                  'Hi! My Name Is Sahaj Singh.',
+                  'Hi, my name is Sahaj Singh. 👋',
                 ]}
                 startDelay={2000}
                 typeSpeed={40}
@@ -202,19 +204,9 @@ function App() {
             <h2>
               <Typed
                 strings={[
-                  'I\'m majoring in Computer Engineering 🧑‍💻',
-                  'I\'m working on making a Pi-Arcade 🕹️',
-                  'I\'m a developer 💻',
-                  'I like to write short stories 📝',
-                  'I\'m a student at SFU 📕',
-                  'I like mystery movies 🎥',
-                  'I can\'t sing 🎤 but I\'m a music lover 🎧',
-                  'I\'m a gamer 🎮',
-                  'I\'ve traveled a lot 🛫',
-                  'I\'m an avid photographer 📷',
-                  'I love cooking 🍳',
-                  'I\'m a dreamer 💭',
-                  'I\'ve been coding since middle school 📖',
+                  'I\'m a Computer Engineer 🧑‍💻',
+                  'I\'m a Developer 💻',
+                  'I\'m a Writer 📝'
                 ]}
                 startDelay={firstLoad ? 6000 : 0}
                 typeSpeed={40}
@@ -231,13 +223,16 @@ function App() {
         </button>
         <div className="button-container">
           <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
-            Connect With Me
+            <FaLinkedin style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
+            <span>Get in link with me</span>
           </a>
           <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/Sahaj_Singh_Resume.pdf&embedded=true" target="_blank" rel="noopener noreferrer" className="centered-button">
-            Look At My Resume
+            <FaFileAlt style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
+            <span>Look at my resume</span>
           </a>
           <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
-            Check Out My Work
+            <FaGithub style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
+            <span>Check out my work</span>
           </a>
         </div>
       </div>
