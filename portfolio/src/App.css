@@ -1,3 +1,8 @@
+:root {
+  --light-color: #fbdb5c;
+  --dark-color: #0c1117;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -21,13 +26,13 @@ html, body {
 }
 
 .App.light {
-  background-color: #fbdb5c;
-  color: #0c1117;
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }
 
 .App.dark {
-  background-color: #0c1117;
-  color: #fbdb5c;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .cursor {
@@ -44,13 +49,13 @@ html, body {
 }
 
 .App.light .cursor {
-  color: #0c1117;
-  border-color: #fbdb5c;
+  color: var(--dark-color);
+  border-color: var(--light-color);
 }
 
 .App.dark .cursor {
-  color: #fbdb5c;
-  border-color: #0c1117;
+  color: var(--light-color);
+  border-color: var(--dark-color);
 }
 
 
@@ -68,11 +73,11 @@ html, body {
 }
 
 .mode-switcher.dark {
-  color: #fbdb5c;
+  color: var(--light-color);
 }
 
 .mode-switcher.light {
-  color: #0c1117;
+  color: var(--dark-color);
 }
 
 .App-header {
@@ -102,7 +107,7 @@ html, body {
 }
 
 .App-header h1, .App-header h2 {
-  background-color: #0c1117;
+  background-color: var(--dark-color);
   padding: 10px;
   border-radius: 5px;
 }
@@ -133,12 +138,12 @@ html, body {
 }
 
 .App.light .profile-pic {
-  border: 3px solid #0c1117;
+  border: 3px solid var(--dark-color);
 }
 
 .App.dark .profile-pic {
-  border: 3px solid #fbdb5c;
-  background-color: #0c1117;
+  border: 3px solid var(--light-color);
+  background-color: var(--dark-color);
 }
 
 .loader, .particles {
@@ -201,13 +206,13 @@ html, body {
 }
 
 .App.light .centered-button {
-  background-color: #0c1117;
-  color: #fbdb5c;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .App.dark .centered-button {
-  background-color: #fbdb5c;
-  color: #0c1117;
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }
 
 .centered-button:hover {
@@ -263,12 +268,12 @@ html, body {
 }
 
 .watermark.light {
-  color: #fbdb5c;
+  color: var(--light-color);
   background-color: rgba(12, 17, 23, 0.6);
 }
 
 .watermark.dark {
-  color: #0c1117;
+  color: var(--dark-color);
   background-color: rgba(251, 219, 92, 0.6);
 }
 
