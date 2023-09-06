@@ -58,7 +58,6 @@ html, body {
   border-color: var(--dark-color);
 }
 
-
 .mode-switcher {
   position: fixed;
   top: 20px;
@@ -276,4 +275,3 @@ html, body {
   color: var(--dark-color);
   background-color: rgba(251, 219, 92, 0.6);
 }
-
