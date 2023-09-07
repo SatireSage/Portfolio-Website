@@ -248,15 +248,15 @@ function App() {
           <FiCode />
         </button>
         <div className="button-container">
-          <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
+          <a href="http://linkedin.sahajs.com/" target="_blank" rel="noopener noreferrer" className="centered-button">
             <FaLinkedin style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
             <span>Get in link with me</span>
           </a>
-          <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/SatireSage/Resume/main/Sahaj_Singh_Resume.pdf&embedded=true" target="_blank" rel="noopener noreferrer" className="centered-button">
+          <a href="http://resume.sahajs.com/" target="_blank" rel="noopener noreferrer" className="centered-button">
             <FaFileAlt style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
             <span>Look at my resume</span>
           </a>
-          <a href="https://github.com/SatireSage" target="_blank" rel="noopener noreferrer" className="centered-button">
+          <a href="http://github.sahajs.com/" target="_blank" rel="noopener noreferrer" className="centered-button">
             <FaGithub style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
             <span>Check out my work</span>
           </a>
