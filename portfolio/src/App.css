@@ -1,7 +1,7 @@
 :root {
-  --light-color: #fbdb5c;
+  --light-color: #fffff0;
   --dark-color: #0c1117;
-  --light-highlight: rgba(251, 219, 92, 0.6);
+  --light-highlight: rgba(255, 255, 240, 0.6);
   --dark-highlight: rgba(12, 17, 23, 0.6);
 }
 
@@ -51,6 +51,12 @@ html, body {
 }
 
 @media only screen and (max-width: 600px) {
+  .cursor {
+      display: none;
+  }
+}
+
+@media (hover: none) {
   .cursor {
       display: none;
   }

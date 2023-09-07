@@ -87,7 +87,7 @@ function App() {
       </div>
       <div className={loading ? 'loader visible' : 'loader hidden'}>
         <ThreeDots
-          color={mode === 'dark' ? "#fbdb5c" : "#0c1117"}
+          color={mode === 'dark' ? "#fffff0" : "#0c1117"}
           height={100}
           width={100}
         />
@@ -103,7 +103,7 @@ function App() {
             }
           },
           "color": {
-            "value": mode === 'dark' ? "#fbdb5c" : "#0c1117"
+            "value": mode === 'dark' ? "#fffff0" : "#0c1117"
           },
           "shape": {
             "type": "polygon",
@@ -190,7 +190,7 @@ function App() {
               "speed": 3
             },
             "repulse": {
-              "distance": 200,
+              "distance": 510,
               "duration": 0.4
             },
             "push": {
