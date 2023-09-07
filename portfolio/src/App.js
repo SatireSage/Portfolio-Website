@@ -5,7 +5,7 @@ import { ThreeDots } from 'react-loader-spinner';
 import { loadFull } from 'tsparticles'
 import Typed from 'react-typed';
 import Tilt from 'react-parallax-tilt';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { FiSun, FiMoon, FiCode } from 'react-icons/fi';
 import './App.css';
 
 function App() {
@@ -20,6 +20,10 @@ function App() {
 
   const toggleMode = () => {
     setMode(mode === 'light' ? 'dark' : 'light');
+  }
+
+  const terminalMode = () => {
+    window.open('https://terminal.sahajs.com');
   }
 
   useEffect(() => {
@@ -239,6 +243,9 @@ function App() {
         )}
         <button onClick={toggleMode} className={`mode-switcher ${mode}`}>
           {mode === 'light' ? <FiMoon /> : <FiSun />}
+        </button>
+        <button onClick={terminalMode} className={`terminal-button ${mode}`}>
+          <FiCode />
         </button>
         <div className="button-container">
           <a href="https://www.linkedin.com/in/sahaj--singh/" target="_blank" rel="noopener noreferrer" className="centered-button">
