@@ -252,7 +252,7 @@ function App() {
             <FaLinkedin style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
             <span>Get in link with me</span>
           </a>
-          <a href="http://resume.sahajs.com/" target="_blank" rel="noopener noreferrer" className="centered-button">
+          <a href={mode === 'dark' ? 'http://resume.dark.sahajs.com/' : 'http://resume.sahajs.com/'} target="_blank" rel="noopener noreferrer" className="centered-button">
             <FaFileAlt style={{ marginRight: '8px', verticalAlign: 'middle', fontSize: '24px' }} />
             <span>Look at my resume</span>
           </a>
