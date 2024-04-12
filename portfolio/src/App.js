@@ -228,8 +228,17 @@ function App() {
               <Typed
                 strings={[
                   'I\'m a Computer Engineer 🧑‍💻',
-                  'I\'m a Developer 💻',
-                  'I\'m a Writer 📝'
+                  'I\'m a Software Developer 💻',
+                  'I\'m a Writer 📝',
+                  'I\'m a Student 📕 and a TA at SFU 🎓',
+                  'I like mystery movies 🎥',
+                  'I can\'t sing 🎤 but I\'m a music lover 🎧',
+                  'I\'m a gamer 🎮',
+                  'I\'ve traveled a lot 🛫',
+                  'I\'m an avid photographer 📷',
+                  'I love cooking 🍳',
+                  'I\'m a dreamer 💭',
+                  'I\'ve been coding since middle school 📖'
                 ]}
                 startDelay={firstLoad ? 6000 : 0}
                 typeSpeed={40}
