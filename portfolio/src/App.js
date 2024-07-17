@@ -216,28 +216,31 @@ function App() {
             <h1>
               <Typed
                 strings={[
-                  'Hi, my name is Sahaj Singh. 👋',
+                  'Hi, my name is Sahaj Singh.',
                 ]}
                 startDelay={2000}
                 typeSpeed={40}
                 showCursor={false}
                 loop={false}
               />
+            {/* eslint-disable-next-line */}
+            <a>
+            <img src="https://emojis.slackmojis.com/emojis/images/1643514612/6181/waving_hand_animated.gif?1643514612" alt="wave" width="50"/>
+            <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" alt="sunglasses" width="50"/>
+            </a>
             </h1>
             <h2>
               <Typed
                 strings={[
                   'I\'m a Computer Engineer 🧑‍💻',
                   'I\'m a Software Developer 💻',
-                  'I\'m a Writer 📝',
                   'I\'m a Student 📕 and a TA at SFU 🎓',
+                  'I\'m a Writer 📝',
                   'I like mystery movies 🎥',
-                  'I can\'t sing 🎤 but I\'m a music lover 🎧',
                   'I\'m a gamer 🎮',
                   'I\'ve traveled a lot 🛫',
                   'I\'m an avid photographer 📷',
                   'I love cooking 🍳',
-                  'I\'m a dreamer 💭',
                   'I\'ve been coding since middle school 📖'
                 ]}
                 startDelay={firstLoad ? 6000 : 0}
