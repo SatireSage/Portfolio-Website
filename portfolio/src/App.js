@@ -96,23 +96,23 @@ function App() {
       <Particles options={{
         "particles": {
           "number": {
-            "value": 6,
+            "value": 500,
             "density": {
               "enable": true,
-              "value_area": 600
+              "value_area": 1000
             }
           },
           "color": {
             "value": mode === 'dark' ? "#fffff0" : "#0c1117"
           },
           "shape": {
-            "type": "polygon",
+            "type": "circle",
             "stroke": {
               "width": 0,
-              "color": "#000"
+              "color": "#000000"
             },
             "polygon": {
-              "nb_sides": 6
+              "nb_sides": 5
             },
             "image": {
               "src": "img/github.svg",
@@ -121,44 +121,44 @@ function App() {
             }
           },
           "opacity": {
-            "value": 0.1,
-            "random": false,
+            "value": 0.5,
+            "random": true,
             "anim": {
-              "enable": false,
+              "enable": true,
               "speed": 1,
-              "opacity_min": 0.1,
+              "opacity_min": 0,
               "sync": false
             }
           },
           "size": {
-            "value": 160,
-            "random": false,
+            "value": 3,
+            "random": true,
             "anim": {
               "enable": true,
-              "speed": 10,
-              "size_min": 40,
+              "speed": 1,
+              "size_min": 0.3,
               "sync": false
             }
           },
           "line_linked": {
             "enable": false,
-            "distance": 200,
+            "distance": 150,
             "color": "#ffffff",
-            "opacity": 1,
-            "width": 2
+            "opacity": 0.4,
+            "width": 1
           },
           "move": {
             "enable": true,
-            "speed": 3,
+            "speed": 1,
             "direction": "none",
-            "random": false,
+            "random": true,
             "straight": false,
             "out_mode": "out",
             "bounce": false,
             "attract": {
               "enable": false,
               "rotateX": 600,
-              "rotateY": 1200
+              "rotateY": 600
             }
           }
         },
@@ -166,8 +166,8 @@ function App() {
           "detect_on": "canvas",
           "events": {
             "onhover": {
-              "enable": false,
-              "mode": "grab"
+              "enable": true,
+              "mode": "bubble"
             },
             "onclick": {
               "enable": true,
@@ -179,18 +179,18 @@ function App() {
             "grab": {
               "distance": 400,
               "line_linked": {
-                "opacity": 1
+                "opacity": 0.2
               }
             },
             "bubble": {
-              "distance": 400,
-              "size": 40,
+              "distance": 100,
+              "size": 0,
               "duration": 2,
-              "opacity": 8,
+              "opacity": 0,
               "speed": 3
             },
             "repulse": {
-              "distance": 510,
+              "distance": 400,
               "duration": 0.4
             },
             "push": {
@@ -216,28 +216,31 @@ function App() {
             <h1>
               <Typed
                 strings={[
-                  'Hi, my name is Sahaj Singh. 👋',
+                  'Hi, my name is Sahaj Singh.',
                 ]}
                 startDelay={2000}
                 typeSpeed={40}
                 showCursor={false}
                 loop={false}
               />
+            {/* eslint-disable-next-line */}
+            <a>
+            <img src="https://emojis.slackmojis.com/emojis/images/1643514612/6181/waving_hand_animated.gif?1643514612" alt="wave" width="50"/>
+            <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" alt="sunglasses" width="50"/>
+            </a>
             </h1>
             <h2>
               <Typed
                 strings={[
                   'I\'m a Computer Engineer 🧑‍💻',
                   'I\'m a Software Developer 💻',
-                  'I\'m a Writer 📝',
                   'I\'m a Student 📕 and a TA at SFU 🎓',
+                  'I\'m a Writer 📝',
                   'I like mystery movies 🎥',
-                  'I can\'t sing 🎤 but I\'m a music lover 🎧',
                   'I\'m a gamer 🎮',
                   'I\'ve traveled a lot 🛫',
                   'I\'m an avid photographer 📷',
                   'I love cooking 🍳',
-                  'I\'m a dreamer 💭',
                   'I\'ve been coding since middle school 📖'
                 ]}
                 startDelay={firstLoad ? 6000 : 0}
