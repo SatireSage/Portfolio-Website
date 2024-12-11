@@ -233,8 +233,8 @@ function App() {
               <Typed
                 strings={[
                   'I\'m a Computer Engineer 🧑‍💻',
-                  'I\'m a Software Developer 💻',
                   'I\'m a Student 📕 and a TA at SFU 🎓',
+                  'I\'m a Software Developer 💻',
                   'I\'m a Writer 📝',
                   'I like mystery movies 🎥',
                   'I\'m a gamer 🎮',
